@@ -1,3 +1,5 @@
+<?php include_once "validation_contact.php"; ?>
+
 <!doctype html>
 
 <html lang="fr">
@@ -16,6 +18,9 @@
             height: 400px;
             width: 100%;
         }
+
+        
+
 
     </style>
 
@@ -219,21 +224,23 @@
                 <div class="card-body">
 
                     <div class="container">
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" method="post" action="contact.php">
 
                             <div class="mb-3">
+                                <p></p>
                                 <label for="firstName">Prénom</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-
+                                <input type="text" name="firstname" class="form-control" id="firstName" placeholder="" value=""required />
                                 <div class="invalid-feedback">
                                     Ce champ ne peut pas être vide.
-                                </div>
+                                
 
                             </div>
 
                             <div class="mb-3">
+
+                        
                                 <label for="lastName">Nom</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input type="text" name="lastname" class="form-control" id="lastName" placeholder="" value="" required />
 
                                 <div class="invalid-feedback">
                                     Ce champ ne peut pas être vide.
@@ -242,9 +249,10 @@
                             </div>
 
                             <div class="mb-3">
+                            
                                 <label for="email">Email</span></label>
-                                <input type="email" class="form-control" id="email"
-                                       placeholder="votreadresse@exemple.ch" required>
+                                <input type="email" name="email" class="form-control" id="email"
+                                       placeholder="votreadresse@exemple.ch" required />
 
                                 <div class="invalid-feedback">
                                     Entrez un email valide.
@@ -252,80 +260,12 @@
 
                             </div>
 
-                            <div class="row">
 
-                                <div class="col-sm-6 mb-1">
-                                    <label for="date">Date</label>
-                                    <input type="date" class="custom-select d-block w-100" id="date" required>
-
-                                    <div class="invalid-feedback">
-                                        Ce champ ne peut pas être vide.
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-6 mb-1">
-                                    <label for="time">Heure</label>
-                                    <input type="time" class="custom-select d-block w-100" id="time" required>
-
-                                    <div class="invalid-feedback">
-                                        Ce champ ne peut pas être vide.
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            <hr class="mb-4" />
+                            <input class="btn btn-info btn-lg btn-block"
+                                    type="submit" value="Valider" />
 
                         </form>
-
-                        <hr class="mb-4">
-                        <button class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#covid"
-                                type="submit">Valider
-                        </button>
-
-                        <!-- Modal info Covid -->
-
-                        <div class="modal fade" id="covid" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-
-                            <div class="modal-dialog modal-dialog-centered">
-
-                                <div class="modal-content">
-
-                                    <div class="modal-header bg-danger text-white">
-
-                                        <h5 id="covidLabel">INFO COVID <i class="fas fa-exclamation-circle"></i></h5>
-                                        <button type="button" class="close text-white btn btn-danger"
-                                                data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-
-                                    </div>
-
-                                    <div class="modal-body">
-
-                                        <div class="container-fluid">
-
-                                            <div class="row">
-                                                En raison du contexte sanitaire et suivant les évolutions des
-                                                restrictions et des mesures de la confédération, les différentes
-                                                prestations de notre établissement sont actuellement suspendues.
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
 
                     </div>
 
